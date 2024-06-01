@@ -14,5 +14,7 @@
 		<!--<property name="hibernate.current_session_context_class">thread</property>-->	<!-- if we want it the be single thread -->
 		<mapping class="com.spring.hibernate.Student" />
 		<mapping class="com.spring.hibernate.Address" />
+		<mapping class="com.mapping.Question" />
+        <mapping class="com.mapping.Answer"/>
 	</session-factory>
 </hibernate-configuration>
