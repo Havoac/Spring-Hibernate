@@ -16,5 +16,7 @@
 		<mapping class="com.spring.hibernate.Address" />
 		<mapping class="com.mapping.Question" />
         <mapping class="com.mapping.Answer"/>
+        <mapping class="com.mapping.manytomany.Emp"/>
+        <mapping class="com.mapping.manytomany.Project"/>
 	</session-factory>
 </hibernate-configuration>
