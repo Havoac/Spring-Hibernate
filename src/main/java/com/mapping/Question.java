@@ -1,10 +1,11 @@
 package com.mapping;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Question {
@@ -14,42 +15,43 @@ public class Question {
 
     private String question;
 
-    @OneToOne
-    @JoinColumn(name="a_id")
-    private Answer answer;
+    @OneToMany (mappedBy = "q")		// the question in Answer class is connected by it (no extra table connecting primary key of Question with foreign key(primary key of Answer))
+    private List<Answer> answers;
 
     public Question() {
         super();
     }
 
-    public Question(int questionId, String question, Answer answer) {
-        super();
-        this.questionId = questionId;
-        this.question = question;
-        this.answer = answer;
-    }
+	public int getQuestionId() {
+		return questionId;
+	}
 
-    public int getQuestionId() {
-        return questionId;
-    }
+	public void setQuestionId(int questionId) {
+		this.questionId = questionId;
+	}
 
-    public void setQuestionId(int questionId) {
-        this.questionId = questionId;
-    }
+	public String getQuestion() {
+		return question;
+	}
 
-    public String getQuestion() {
-        return question;
-    }
+	public void setQuestion(String question) {
+		this.question = question;
+	}
 
-    public void setQuestion(String question) {
-        this.question = question;
-    }
+	public List<Answer> getAnswers() {
+		return answers;
+	}
 
-    public Answer getAnswer() {
-        return answer;
-    }
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
+	}
 
-    public void setAnswer(Answer answer) {
-        this.answer = answer;
-    }
+	public Question(int questionId, String question, List<Answer> answers) {
+		super();
+		this.questionId = questionId;
+		this.question = question;
+		this.answers = answers;
+	}
+
+    
 }

@@ -3,7 +3,7 @@ package com.mapping;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Answer {
@@ -12,7 +12,7 @@ public class Answer {
 	private int answerId;
 	private String answer;
 	
-	@OneToOne(mappedBy="answer")		// answer will take care of all the mapping
+	@ManyToOne
 	private Question q;
 	
 	public Question getQ() {
