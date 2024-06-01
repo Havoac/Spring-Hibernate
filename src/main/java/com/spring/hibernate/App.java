@@ -67,7 +67,8 @@ public class App
         session.save(st);
         session.save(address);
         tx.commit();
-        session.close();
+        
+        session.close();		// if we had used "hibernate.current_session_context_class". There was no need to manually close the session.
         
         System.out.println(factory);
         System.out.println(factory.isClosed());

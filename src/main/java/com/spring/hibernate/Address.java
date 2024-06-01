@@ -17,7 +17,7 @@ import jakarta.persistence.Transient;
 @Table(name="student_address")
 public class Address {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)		// for auto increament
 	@Column(name="address_id")
 	private int addressId;
 	
