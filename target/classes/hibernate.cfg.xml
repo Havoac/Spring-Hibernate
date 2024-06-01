@@ -9,9 +9,10 @@
 		<property name="connection.username">root</property>
 		<property name="connection.password">Havoc961@</property>
 		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
-		<property name="hbm2ddl.auto">update</property>	<!-- create table (update-doesn't create rable if already there)-->
+		<property name="hbm2ddl.auto">create</property>	<!-- create table again -->
 		<property name="show_sql">true</property>	<!--to see the queries hiberate used (automatically)-->
 		<property name="hibernate.current_session_context_class">thread</property>
 		<mapping class="com.spring.hibernate.Student" />
+		<mapping class="com.spring.hibernate.Address" />
 	</session-factory>
 </hibernate-configuration>
