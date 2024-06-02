@@ -9,9 +9,9 @@
 		<property name="connection.username">root</property>
 		<property name="connection.password">Havoc961@</property>
 		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
-		<property name="hbm2ddl.auto">create</property>		<!-- drops all the tables from the database and create them all again when the application is run -->
+		<property name="hbm2ddl.auto">update</property>		<!-- drops all the tables from the database and create them all again when the application is run -->
 		<property name="show_sql">true</property>	<!--to see the queries hiberate used (automatically)-->
-		<property name="format_sql">true</property>
+		<!--<property name="format_sql">true</property>-->
 		<!--<property name="hibernate.current_session_context_class">thread</property>-->	<!-- if we want it the be single thread -->
 		<mapping class="com.spring.hibernate.Student" />
 		<mapping class="com.spring.hibernate.Address" />
