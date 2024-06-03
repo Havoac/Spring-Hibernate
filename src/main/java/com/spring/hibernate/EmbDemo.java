@@ -22,9 +22,25 @@ public class EmbDemo {
         certi.setDuration("2 months");
         student.setCerti(certi);
         
+        
         Session session = factory.openSession();
         Transaction tx = session.beginTransaction();
         session.save(student);
+        
+        for(int i=10 ; i<100 ; i++) {
+        	Student tempStudent = new Student();
+        	tempStudent.setId(i);
+        	tempStudent.setName("Devesh");
+        	tempStudent.setCity("hyderabad");
+        	
+        	Certificate tempCerti = new Certificate();
+        	tempCerti.setCourse("java Course");
+        	tempCerti.setDuration("2 months");
+        	tempStudent.setCerti(tempCerti);
+        	
+        	session.save(tempStudent);
+        }
+        
         tx.commit();
         session.close();
         factory.close();
