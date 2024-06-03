@@ -2,6 +2,7 @@ package com.mapping;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -15,7 +16,7 @@ public class Question {
 
     private String question;
 
-    @OneToMany (mappedBy = "q")		// the question in Answer class is connected by it (no extra table connecting primary key of Question with foreign key(primary key of Answer))
+    @OneToMany (mappedBy = "q", cascade=CascadeType.ALL)		// the question in Answer class is connected by it (no extra table connecting primary key of Question with foreign key(primary key of Answer))
     private List<Answer> answers;
 
     public Question() {
