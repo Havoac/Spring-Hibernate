@@ -1,6 +1,6 @@
 package com.spring.hibernate;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class Certificate {

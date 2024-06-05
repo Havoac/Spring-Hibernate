@@ -1,11 +1,11 @@
 package com.spring.hibernate;
 
+import javax.persistence.Cacheable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-
-import jakarta.persistence.Cacheable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 
 @Entity		// to change name => @Entity(name="")
 //@Table(name="")		// to keep the entity name as Student but table name as something else
