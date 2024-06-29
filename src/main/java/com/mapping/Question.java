@@ -10,18 +10,18 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Question {
-    @Id
-    @Column(name = "question_id")
-    private int questionId;
+	@Id
+	@Column(name = "question_id")
+	private int questionId;
 
-    private String question;
+	private String question;
 
-    @OneToMany (mappedBy = "q", cascade=CascadeType.ALL)		// the question in Answer class is connected by it (no extra table connecting primary key of Question with foreign key(primary key of Answer))
-    private List<Answer> answers;
+	@OneToMany(mappedBy = "q", cascade = CascadeType.ALL) // the question in Answer class is connected by it (no extra table connecting primary key of Question with foreign key(primary key of Answer))
+	private List<Answer> answers;
 
-    public Question() {
-        super();
-    }
+	public Question() {
+		super();
+	}
 
 	public int getQuestionId() {
 		return questionId;
@@ -54,5 +54,4 @@ public class Question {
 		this.answers = answers;
 	}
 
-    
 }

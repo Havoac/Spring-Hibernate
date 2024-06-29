@@ -7,19 +7,19 @@ import javax.persistence.Id;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-@Entity		// to change name => @Entity(name="")
+@Entity 			// to change name => @Entity(name="")
 //@Table(name="")		// to keep the entity name as Student but table name as something else
 @Cacheable
-@Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class Student {
-	@Id		// to denote primary key
+	@Id // to denote primary key
 	private int id;
-	
+
 	private String name;
 	private String city;
-	
+
 	private Certificate certi;
-	
+
 	public Certificate getCerti() {
 		return certi;
 	}
@@ -68,6 +68,5 @@ public class Student {
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", city=" + city + "]";
 	}
-	
-	
+
 }

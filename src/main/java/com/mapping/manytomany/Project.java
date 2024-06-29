@@ -11,11 +11,11 @@ import javax.persistence.ManyToMany;
 public class Project {
 	@Id
 	private int pid;
-	
-	@Column(name="project_name")
+
+	@Column(name = "project_name")
 	private String projectName;
-	
-	@ManyToMany(mappedBy="projects")
+
+	@ManyToMany(mappedBy = "projects")
 	private List<Emp> emps;
 
 	public int getPid() {
@@ -53,6 +53,5 @@ public class Project {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+
 }

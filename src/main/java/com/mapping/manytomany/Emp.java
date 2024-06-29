@@ -16,9 +16,9 @@ public class Emp {
 	private String name;
 
 	@ManyToMany
-	@JoinTable(name="empAndProjectConnected",		 // this is a join column (the primary key of this table will be connected by primary key o the Project table (will act as foreign key))
-		joinColumns = { @JoinColumn(name="eid") } ,		// the first column of the join table
-		inverseJoinColumns = { @JoinColumn(name="pid") }		// the second column of the join table
+	@JoinTable(name = "empAndProjectConnected", // this is a join column (the primary key of this table will be connected by primary key o the Project table (will act as foreign key))
+			joinColumns = { @JoinColumn(name = "eid") }, // the first column of the join table
+			inverseJoinColumns = { @JoinColumn(name = "pid") } // the second column of the join table
 	)
 	private List<Project> projects;
 

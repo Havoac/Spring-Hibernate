@@ -14,19 +14,17 @@ public class CriteriaExample {
 
 	public static void main(String[] args) {
 		Configuration cfg = new Configuration();
-        cfg.configure("hibernate.cfg.xml");
-        SessionFactory factory = cfg.buildSessionFactory();
-        
-        Session session = factory.openSession();
-        
-        Criteria c = session.createCriteria(Student.class);
-        c.add(Restrictions.eq("certi.course","Java"));		// to filter student (student with course java)
-        
-        List<Student> students = c.list();		// returns all the students (all the columns)
-        
-        
-        
-        factory.close();
+		cfg.configure("hibernate.cfg.xml");
+		SessionFactory factory = cfg.buildSessionFactory();
+
+		Session session = factory.openSession();
+
+		Criteria c = session.createCriteria(Student.class);
+		c.add(Restrictions.eq("certi.course", "Java")); // to filter student (student with course java)
+
+		List<Student> students = c.list(); // returns all the students (all the columns)
+
+		factory.close();
 	}
 
 }

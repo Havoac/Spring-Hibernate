@@ -12,20 +12,20 @@ public class SQLExample {
 
 	public static void main(String[] args) {
 		Configuration cfg = new Configuration();
-        cfg.configure("hibernate.cfg.xml");
-        SessionFactory factory = cfg.buildSessionFactory();
-        
-        Session session = factory.openSession();
-        
-        String q = "select *from student";
-        
-        NativeQuery nq = session.createNativeQuery(q);
-        List<Object[]> list=nq.list();
-        
-        for(Object []obj:list)
-        	System.out.println(Arrays.deepToString(obj));
-        
-        session.close();
-        factory.close();
+		cfg.configure("hibernate.cfg.xml");
+		SessionFactory factory = cfg.buildSessionFactory();
+
+		Session session = factory.openSession();
+
+		String q = "select *from student";
+
+		NativeQuery nq = session.createNativeQuery(q);
+		List<Object[]> list = nq.list();
+
+		for (Object[] obj : list)
+			System.out.println(Arrays.deepToString(obj));
+
+		session.close();
+		factory.close();
 	}
 }
